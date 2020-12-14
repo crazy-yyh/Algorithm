@@ -17,7 +17,10 @@ public class LinkList<T> implements Iterable<T>{
         sl.insert(3);
         sl.insert(4);
         sl.insert(5);
-        sl.reverse();
+        sl.insert(3,6);
+        System.out.println(sl.remove(1));
+        System.out.println("===================");
+//        sl.reverse();
 
         for (int s : sl) {
             System.out.println(s);
@@ -76,8 +79,11 @@ public class LinkList<T> implements Iterable<T>{
      */
     public T get(int i){
 
+        if(i <= 0 || i > length()){
+            return null;
+        }
         Node cursor = head.next;
-        for(int index = 0; index < i ; index++){
+        for(int index = 0; index < i -1 ; index++){
             cursor = cursor.next;
         }
         return cursor.item;
@@ -106,9 +112,18 @@ public class LinkList<T> implements Iterable<T>{
      * 向指定位置i出，添加元素t
      */
     public void insert(int i, T t){
+        if(i <= 0){
+            head.next = new Node(t,head.next);
+            return;
+        }
+        if(i > length()){
+            insert(t);
+            return;
+        }
+
         //找到i位置前一个结点
         Node cursor = head;
-        for(int index = 0; index < i;index++){
+        for(int index = 0; index < i-1;index++){
             cursor = cursor.next;
         }
         //找到i位置的结点
@@ -125,9 +140,13 @@ public class LinkList<T> implements Iterable<T>{
      * 删除指定位置i处的元素，并返回被删除的元素
      */
     public T remove(int i){
+
+        if(i <= 0 || i > length()){
+            return null;
+        }
         //找到i位置的前一个节点
         Node cursor = head;
-        for (int j = 0; j < i; j++) {
+        for (int j = 0; j < i -1; j++) {
             cursor = cursor.next;
         }
         //要找到i位置的结点
@@ -194,6 +213,8 @@ public class LinkList<T> implements Iterable<T>{
 
 
     }
+
+
 
     public  boolean isCircle(Node head){
         Node fast = head;

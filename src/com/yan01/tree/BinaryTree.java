@@ -49,9 +49,9 @@ public class BinaryTree<Key extends Comparable<Key>,Value> {
         tree.put(5,"王5");
         tree.put(7,"王7");
 //        tree.delete(8);
-        System.out.println(tree.min());
-        System.out.println(tree.max());
-        System.out.println(tree.maxDepth());
+        System.out.println("最小键是："+tree.min());
+        System.out.println("最大键是："+tree.max());
+        System.out.println("最大深度是"+tree.maxDepth());
         Queue<Integer> integers = tree.afterErgodic();
         for (Integer key : integers) {
             String value = tree.get(key);
