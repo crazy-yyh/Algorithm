@@ -11,25 +11,25 @@ public class Test {
     private static Comparable[] assist;
 
     public static void main(String[] args) {
-        Integer[] arr = {2,9,6,8,4,12,24,19,31,25};
+        Integer[] arr = {2,6,3,8,4,12,814,25,24,36,5,1};
         Test.sort(arr);
         System.out.println(Arrays.toString(arr));
     }
 
-    public static void sort(Comparable[] a){
 
+    private static void sort(Comparable[] a){
         assist = new Comparable[a.length];
         int lo = 0;
-        int hi = a.length-1;
+        int hi = a.length - 1;
         sort(a,lo,hi);
     }
 
-    private static void sort(Comparable[] a, int lo,int hi){
+    private static void sort(Comparable[] a, int lo, int hi){
         while(hi <= lo){
             return;
         }
 
-        int mid = lo +(hi-lo)/2;
+        int mid = lo + (hi - lo) /2;
         sort(a,lo,mid);
         sort(a,mid+1,hi);
         merge(a,lo,mid,hi);
@@ -37,7 +37,8 @@ public class Test {
 
     }
 
-    private static void merge(Comparable[] a,int lo, int mid, int hi){
+    private static void merge(Comparable[] a, int lo, int mid, int hi){
+
         int i = lo;
         int left = lo;
         int right = mid+1;
@@ -54,26 +55,23 @@ public class Test {
             assist[i++] = a[left++];
         }
 
-        while(right <= hi){
+        while( right <= hi){
             assist[i++] = a[right++];
         }
 
-        for (int index = lo; index <i ; index++) {
+        for (int index = lo; index < i ; index++) {
             a[index] = assist[index];
         }
 
-
     }
-
-
 
     private static boolean less(Comparable v, Comparable w){
         return v.compareTo(w) < 0;
     }
 
-    private static void exch(Comparable[] a, int i, int j){
-        Comparable temp = a[i];
+    private static void exch(Comparable[] a, int i , int j){
+        Comparable tmp = a[i];
         a[i] = a[j];
-        a[j] = temp;
+        a[j] = tmp;
     }
 }

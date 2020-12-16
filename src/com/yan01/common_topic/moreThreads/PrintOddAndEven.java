@@ -1,4 +1,4 @@
-package com.yan01.common_topic.Thread_print;
+package com.yan01.common_topic.moreThreads;
 
 /**
  * @author yyh

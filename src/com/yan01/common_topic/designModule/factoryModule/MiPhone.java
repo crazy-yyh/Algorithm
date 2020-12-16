@@ -1,6 +1,4 @@
-package com.yan01.common_topic.design_model;
-
-import java.nio.channels.FileChannel;
+package com.yan01.common_topic.designModule.factoryModule;
 
 /**
  * @author yyh

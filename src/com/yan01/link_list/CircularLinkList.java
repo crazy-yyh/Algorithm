@@ -14,10 +14,8 @@ public class CircularLinkList<T> implements Iterable<T> {
         link.insert(4);
         link.insert(5);
         link.insert(6);
+        link.travel();
 
-        for(int i : link){
-            System.out.println(i);
-        }
     }
 
     private Node head;
@@ -43,6 +41,20 @@ public class CircularLinkList<T> implements Iterable<T> {
         this.size = 0;
     }
 
+    public void travel(){
+
+        if(isEmpty()){
+            return;
+        }
+        Node curr = head.next;
+
+        while(curr.next != head.next){
+            System.out.println(curr.items);
+            curr = curr.next;
+        }
+        System.out.println(curr.items);
+    }
+
     public boolean isEmpty(){
         return size == 0;
     }
@@ -61,8 +73,8 @@ public class CircularLinkList<T> implements Iterable<T> {
             size++;
             return;
         }
-        Node curr  = head;
-        while(curr.next != null){
+        Node curr  = head.next;
+        while(curr.next != head.next){
             curr = curr.next;
         }
         curr.next = node;
@@ -71,6 +83,18 @@ public class CircularLinkList<T> implements Iterable<T> {
         size++;
 
     }
+
+    public void insert(int i, T t){
+
+        Node node = new Node(t,null);
+        Node curr = head;
+        for (int j = 0; j < i - 1; j++) {
+            curr = curr.next;
+        }
+
+    }
+
+
 
 
 
