@@ -2,6 +2,8 @@ package com.yan01.tree;
 
 import com.yan01.link_list.Queue;
 
+import javax.swing.tree.TreeNode;
+
 /**
  * @author yyh
  * @create 2020-11-02 11:52
@@ -44,15 +46,15 @@ public class BinaryTree<Key extends Comparable<Key>,Value> {
         tree.put(6,"王6");
         tree.put(9,"王9");
         tree.put(11,"王11");
-        tree.put(1,"王1");
-        tree.put(3,"王3");
-        tree.put(5,"王5");
-        tree.put(7,"王7");
+//        tree.put(1,"王1");
+//        tree.put(3,"王3");
+//        tree.put(5,"王5");
+//        tree.put(7,"王7");
 //        tree.delete(8);
-        System.out.println("最小键是："+tree.min());
-        System.out.println("最大键是："+tree.max());
-        System.out.println("最大深度是"+tree.maxDepth());
-        Queue<Integer> integers = tree.afterErgodic();
+//        System.out.println("最小键是："+tree.min());
+//        System.out.println("最大键是："+tree.max());
+//        System.out.println("最大深度是"+tree.maxDepth());
+        Queue<Integer> integers = tree.midErgodic();
         for (Integer key : integers) {
             String value = tree.get(key);
             System.out.println(key+"----"+value);

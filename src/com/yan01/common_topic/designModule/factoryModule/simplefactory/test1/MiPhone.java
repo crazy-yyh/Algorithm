@@ -1,4 +1,4 @@
-package com.yan01.common_topic.designModule.factoryModule;
+package com.yan01.common_topic.designModule.factoryModule.simplefactory.test1;
 
 /**
  * @author yyh
